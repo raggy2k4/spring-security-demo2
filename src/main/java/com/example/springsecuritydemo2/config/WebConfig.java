@@ -17,7 +17,8 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/all").permitAll().anyRequest().authenticated();
+                .antMatchers("/all").permitAll().anyRequest().authenticated()
+                .and().formLogin().permitAll();
     }
 
     @Bean
